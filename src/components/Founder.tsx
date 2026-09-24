@@ -51,10 +51,10 @@ export default function Founder() {
               <SiteImage
                 src="/images/musa-sulaiman.webp"
                 alt="Portrait of Musa Sulaiman, founder of OneDev Studioo and Zipa."
-                width={420}
-                height={420}
+                width={800}
+                height={993}
                 sizes="(min-width: 768px) 28vw, 80vw"
-                className="absolute inset-0 h-full w-full object-cover object-[center_18%]"
+                className="absolute inset-0 h-full w-full object-cover object-center"
               />
             </div>
           </div>

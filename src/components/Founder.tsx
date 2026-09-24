@@ -14,7 +14,8 @@ const skills = [
 
 const links = [
   { label: 'X', href: 'https://x.com/0xSkamber' },
-  { label: 'Email', href: 'mailto:sulaimanmusa399@gmail.com' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/musa-sulaiman-8ba03b432/' },
+  { label: 'Email', href: 'mailto:musa@usezipa.xyz' },
 ];
 
 export default function Founder() {

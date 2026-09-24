@@ -2,7 +2,8 @@ import { useScrollReveal } from '../hooks/useScrollReveal';
 
 const links = [
   { label: 'X', href: 'https://x.com/0xSkamber' },
-  { label: 'Email', href: 'mailto:sulaimanmusa399@gmail.com' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/musa-sulaiman-8ba03b432/' },
+  { label: 'Email', href: 'mailto:musa@usezipa.xyz' },
 ];
 
 export default function Contact() {
@@ -72,7 +73,7 @@ export default function Contact() {
               data-hover
             >
               <a
-                href="mailto:sulaimanmusa399@gmail.com"
+                href="mailto:musa@usezipa.xyz"
                 className="flex items-center gap-4 px-6 py-5 transition-all duration-400"
                 style={{
                   border: '1px solid var(--color-border)',
@@ -88,7 +89,7 @@ export default function Contact() {
                   e.currentTarget.style.background = 'transparent';
                 }}
               >
-                <span className="font-h3 text-left break-all">sulaimanmusa399@gmail.com</span>
+                <span className="font-h3 text-left break-all">musa@usezipa.xyz</span>
                 <span
                   className="text-2xl transition-transform duration-300 group-hover:translate-x-1"
                   style={{ color: 'var(--color-accent)' }}

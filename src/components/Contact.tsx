@@ -1,8 +1,7 @@
 import { useScrollReveal } from '../hooks/useScrollReveal';
 
 const links = [
-  { label: 'GitHub', href: 'https://github.com/Kambah123' },
-  { label: 'X', href: 'https://x.com/Skambermuser' },
+  { label: 'X', href: 'https://x.com/0xSkamber' },
   { label: 'Email', href: 'mailto:sulaimanmusa399@gmail.com' },
 ];
 

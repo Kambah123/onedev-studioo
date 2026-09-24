@@ -13,8 +13,7 @@ const skills = [
 ];
 
 const links = [
-  { label: 'GitHub', href: 'https://github.com/Kambah123' },
-  { label: 'X', href: 'https://x.com/Skambermuser' },
+  { label: 'X', href: 'https://x.com/0xSkamber' },
   { label: 'Email', href: 'mailto:sulaimanmusa399@gmail.com' },
 ];
 
@@ -76,7 +75,7 @@ export default function Founder() {
 
             <p className="font-body mb-4 leading-[1.8]" style={{ color: 'var(--color-text-secondary)' }}>
               Musa runs OneDev Studioo, a design and software studio registered in Nigeria
-              (CAC BN 9704508), from Suleja in Niger State. He founded Zipa, a Solana-focused
+              (CAC BN 9704508), from Kebbi State, Nigeria. He founded Zipa, a Solana-focused
               fintech product for simple crypto and naira payments.
             </p>
 
@@ -122,7 +121,7 @@ export default function Founder() {
                 </a>
               ))}
               <span className="font-mono text-xs" style={{ color: 'var(--color-text-muted)' }}>
-                SULEJA / NIGER STATE
+                KEBBI STATE / NIGERIA
               </span>
             </div>
           </div>

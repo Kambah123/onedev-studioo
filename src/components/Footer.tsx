@@ -7,8 +7,7 @@ const navigate = [
 ];
 
 const follow = [
-  { label: 'X', href: 'https://x.com/Skambermuser' },
-  { label: 'GitHub', href: 'https://github.com/Kambah123' },
+  { label: 'X', href: 'https://x.com/0xSkamber' },
   { label: 'Email', href: 'mailto:sulaimanmusa399@gmail.com' },
 ];
 
@@ -63,7 +62,7 @@ export default function Footer() {
               Registered in Nigeria, CAC BN 9704508.
             </p>
             <p className="font-mono text-xs" style={{ color: 'var(--color-text-muted)' }}>
-              SULEJA / NIGER STATE
+              KEBBI STATE / NIGERIA
             </p>
           </div>
 
@@ -135,7 +134,7 @@ export default function Footer() {
             © {new Date().getFullYear()} OneDev Studioo. All rights reserved.
           </span>
           <span className="font-mono text-xs" style={{ color: 'var(--color-text-muted)' }}>
-            Suleja, Niger State.
+            Kebbi State, Nigeria.
           </span>
         </div>
       </div>

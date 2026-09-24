@@ -169,7 +169,7 @@ export default function Hero() {
                 transition: 'all 0.8s var(--ease-out-expo) 0.8s',
               }}
             >
-              OneDev Studioo is a design and software studio in Suleja, building
+              OneDev Studioo is a design and software studio in Kebbi State, building
               products — including Zipa — from Nigeria for the world.
             </p>
 
@@ -221,7 +221,7 @@ export default function Hero() {
             }}
           >
             <span className="font-mono text-xs" style={{ color: 'var(--color-text-muted)' }}>
-              SULEJA / NIGER STATE
+              KEBBI STATE / NIGERIA
             </span>
             <span className="font-mono text-xs" style={{ color: 'var(--color-text-muted)' }}>
               — BUILDING GLOBALLY

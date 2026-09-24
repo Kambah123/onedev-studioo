@@ -34,7 +34,7 @@ export default function Hero() {
   return (
     <section
       ref={heroRef}
-      className="relative min-h-screen flex flex-col justify-end pb-16 md:pb-24 overflow-hidden"
+      className="relative min-h-screen flex flex-col justify-start md:justify-end pb-16 md:pb-24 overflow-hidden"
       onMouseMove={handleMouseMove}
       id="hero"
       style={{

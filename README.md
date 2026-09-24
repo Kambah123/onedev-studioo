@@ -1,6 +1,6 @@
 # OneDev Studioo
 
-Design and software studio in Suleja, Niger State. Founded by Musa Sulaiman, who also founded Zipa, a Solana-focused product for crypto and naira payments.
+Design and software studio in Kebbi State, Nigeria. Founded by Musa Sulaiman, who also founded Zipa, a Solana-focused product for crypto and naira payments.
 
 Registered in Nigeria as OneDev Studioo, CAC BN 9704508.
 

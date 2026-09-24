@@ -51,45 +51,6 @@ export const projects: Project[] = [
     height: 900,
   },
   {
-    slug: 'planai',
-    title: 'PlanAi',
-    description:
-      'Measure an Australian floor plan, lock the rooms, then picture the house as a visualization.',
-    image: '/works/planai.webp',
-    imageAlt:
-      'PlanForm AU homepage with the headline Measure the plan. Then picture the house.',
-    href: 'https://myausplan.vercel.app',
-    tags: ['Architecture', 'Product', 'AI'],
-    width: 1440,
-    height: 900,
-  },
-  {
-    slug: 'fluxpay',
-    title: 'FluxPay',
-    description:
-      'Non-custodial crypto payment gateway — accept crypto or card and settle to your own wallet.',
-    image: '/works/fluxpay.webp',
-    imageAlt:
-      'FluxPay page in phase zero, titled as a non-custodial crypto payment gateway.',
-    href: 'https://fluxpay-ashen.vercel.app',
-    tags: ['Fintech', 'Payments', 'Product'],
-    width: 1440,
-    height: 900,
-  },
-  {
-    slug: 'biogenix',
-    title: 'Biogenix Labs',
-    description:
-      'Redesign for a research-grade peptide supplier, with a catalogue built around verified purity.',
-    image: '/works/biogenix.webp',
-    imageAlt:
-      'Biogenix Labs homepage with the headline Research-Grade Peptides. Verified Purity.',
-    href: 'https://premium-site-redesign.vercel.app',
-    tags: ['Redesign', 'Health', 'Design'],
-    width: 1440,
-    height: 900,
-  },
-  {
     slug: 'nutriblend',
     title: 'Unique NutriBlend',
     description:

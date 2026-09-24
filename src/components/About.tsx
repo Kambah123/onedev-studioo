@@ -25,7 +25,7 @@ const capabilities = [
 ];
 
 const facts = [
-  { value: 'Suleja', label: 'Niger State, Nigeria' },
+  { value: 'Kebbi', label: 'Kebbi State, Nigeria' },
   { value: 'BN 9704508', label: 'CAC registration' },
   { value: 'Zipa', label: 'Fintech product' },
   { value: 'Design + code', label: 'The studio’s work' },
@@ -92,8 +92,8 @@ export default function About() {
           <div className="col-span-12 md:col-span-5 md:col-start-1">
             <div className="w-full h-px mb-8" style={{ background: 'var(--color-border)' }} />
             <p className="font-body leading-[1.8] mb-6" style={{ color: 'var(--color-text-secondary)' }}>
-              OneDev Studioo is a registered design and software studio based in Suleja,
-              Niger State. The work is products we own — starting with Zipa — and design
+              OneDev Studioo is a registered design and software studio based in Kebbi
+              State, Nigeria. The work is products we own — starting with Zipa — and design
               and engineering for stores, catalogues, and tools.
             </p>
             <p className="font-body leading-[1.8] mb-6" style={{ color: 'var(--color-text-secondary)' }}>
@@ -129,7 +129,7 @@ export default function About() {
               "From Nigeria. For the world."
             </div>
             <p className="font-caption" style={{ color: 'var(--color-text-muted)' }}>
-              — Suleja, Niger State
+              — Kebbi State, Nigeria
             </p>
           </div>
         </div>

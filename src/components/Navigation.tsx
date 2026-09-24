@@ -89,7 +89,7 @@ export default function Navigation() {
               className="font-mono text-[0.6875rem]"
               style={{ color: 'var(--color-text-muted)' }}
             >
-              SULEJA, NG
+              KEBBI, NG
             </span>
           </div>
 
@@ -153,7 +153,7 @@ export default function Navigation() {
               transition: `all 0.5s var(--ease-out-expo) 0.5s`,
             }}
           >
-            SULEJA / NIGER STATE
+            KEBBI STATE / NIGERIA
           </div>
         </div>
       </div>

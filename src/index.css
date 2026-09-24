@@ -1,0 +1,737 @@
+@import "tailwindcss";
+
+/* ============================================
+   ONEDEV STUDIO — Design System
+   ============================================ */
+
+:root {
+  /* Color System — Monochrome with warm accent */
+  --color-bg: #050505;
+  --color-bg-elevated: #0C0C0C;
+  --color-bg-surface: #111111;
+  --color-bg-muted: #161616;
+  --color-border: #1E1E1E;
+  --color-border-subtle: #141414;
+  --color-text: #EDEDED;
+  --color-text-secondary: #888888;
+  --color-text-muted: #555555;
+  --color-accent: #FF5C28;
+  --color-accent-soft: rgba(255, 92, 40, 0.15);
+  
+  /* Light mode (for alternating sections) */
+  --color-bg-light: #FAFAF9;
+  --color-bg-light-elevated: #F0F0EE;
+  --color-bg-light-surface: #E8E8E6;
+  --color-border-light: #E0E0DE;
+  --color-text-light: #0A0A0A;
+  --color-text-light-secondary: #555555;
+
+  /* Typography Scale — Responsive with clamp() */
+  --font-display: clamp(3.5rem, 8vw, 9rem);
+  --font-h1: clamp(2.5rem, 5vw, 5rem);
+  --font-h2: clamp(1.75rem, 3.5vw, 3.5rem);
+  --font-h3: clamp(1.25rem, 2vw, 1.75rem);
+  --font-body: clamp(0.875rem, 1vw, 1rem);
+  --font-caption: clamp(0.75rem, 0.85vw, 0.875rem);
+  --font-label: 0.6875rem;
+  --font-nav: 0.8125rem;
+  --font-mono: 0.8125rem;
+
+  /* Spacing */
+  --section-gap: clamp(6rem, 12vh, 12rem);
+  --content-padding: clamp(1.5rem, 4vw, 6rem);
+
+  /* Timing */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-in-out: cubic-bezier(0.76, 0, 0.24, 1);
+
+  /* Cursor follower */
+  --cursor-x: 50%;
+  --cursor-y: 50%;
+}
+
+/* ============================================
+   Base Styles
+   ============================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: var(--font-body);
+  line-height: 1.6;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-bg);
+}
+
+/* ============================================
+   Typography Classes
+   ============================================ */
+
+.font-display {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: var(--font-display);
+  font-weight: 500;
+  line-height: 0.92;
+  letter-spacing: -0.04em;
+}
+
+.font-h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: var(--font-h1);
+  font-weight: 500;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+}
+
+.font-h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: var(--font-h2);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+}
+
+.font-h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: var(--font-h3);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.font-body {
+  font-family: 'Inter', sans-serif;
+  font-size: var(--font-body);
+  line-height: 1.6;
+  letter-spacing: 0;
+}
+
+.font-caption {
+  font-family: 'Inter', sans-serif;
+  font-size: var(--font-caption);
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+}
+
+.font-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: var(--font-label);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.font-nav {
+  font-family: 'Inter', sans-serif;
+  font-size: var(--font-nav);
+  font-weight: 450;
+  letter-spacing: 0.01em;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: var(--font-mono);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+/* ============================================
+   Custom Cursor
+   ============================================ */
+
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background: var(--color-accent);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s var(--ease-out-expo),
+              height 0.3s var(--ease-out-expo),
+              opacity 0.3s var(--ease-out-expo);
+  mix-blend-mode: difference;
+}
+
+.cursor-dot.hovering {
+  width: 40px;
+  height: 40px;
+  opacity: 0.5;
+}
+
+/* ============================================
+   Animations
+   ============================================ */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes revealLine {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ============================================
+   Utility Animations
+   ============================================ */
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s var(--ease-out-expo) both;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s var(--ease-out-expo) both;
+}
+
+.animate-slide-left {
+  animation: slideInFromLeft 0.8s var(--ease-out-expo) both;
+}
+
+.animate-slide-right {
+  animation: slideInFromRight 0.8s var(--ease-out-expo) both;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.8s var(--ease-out-expo) both;
+}
+
+.animate-line {
+  animation: revealLine 1s var(--ease-out-expo) both;
+  transform-origin: left;
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+.animate-pulse-dot {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* ============================================
+   Delay Utilities
+   ============================================ */
+
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+.delay-600 { animation-delay: 0.6s; }
+.delay-700 { animation-delay: 0.7s; }
+.delay-800 { animation-delay: 0.8s; }
+.delay-1000 { animation-delay: 1s; }
+.delay-1200 { animation-delay: 1.2s; }
+.delay-1400 { animation-delay: 1.4s; }
+.delay-1600 { animation-delay: 1.6s; }
+
+/* ============================================
+   Section Styles
+   ============================================ */
+
+.section-dark {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+.section-light {
+  background-color: var(--color-bg-light);
+  color: var(--color-text-light);
+}
+
+.section-elevated {
+  background-color: var(--color-bg-elevated);
+}
+
+/* ============================================
+   Grid & Layout Utilities
+   ============================================ */
+
+.content-width {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-left: var(--content-padding);
+  padding-right: var(--content-padding);
+}
+
+.grid-12 {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.5rem;
+}
+
+/* ============================================
+   Link & Interactive Styles
+   ============================================ */
+
+.link-underline {
+  position: relative;
+  text-decoration: none;
+  color: var(--color-text);
+  transition: color 0.3s ease;
+}
+
+.link-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--color-accent);
+  transition: width 0.4s var(--ease-out-expo);
+}
+
+.link-underline:hover::after {
+  width: 100%;
+}
+
+.link-underline:hover {
+  color: var(--color-accent);
+}
+
+/* ============================================
+   Horizontal Rule
+   ============================================ */
+
+.rule {
+  border: none;
+  height: 1px;
+  background: var(--color-border);
+  width: 100%;
+}
+
+.rule-accent {
+  height: 2px;
+  background: var(--color-accent);
+  width: 60px;
+}
+
+/* ============================================
+   Project Card
+   ============================================ */
+
+.project-card {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid var(--color-border);
+  border-radius: 2px;
+  transition: border-color 0.4s ease, transform 0.4s var(--ease-out-expo);
+}
+
+.project-card:hover {
+  border-color: var(--color-accent);
+  transform: translateY(-4px);
+}
+
+.project-card .project-image {
+  transition: transform 0.8s var(--ease-out-expo);
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.05);
+}
+
+/* ============================================
+   Nav Link Hover
+   ============================================ */
+
+.nav-link {
+  position: relative;
+  color: var(--color-text-secondary);
+  transition: color 0.3s ease;
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 0;
+  height: 1px;
+  background: var(--color-accent);
+  transition: width 0.4s var(--ease-out-expo);
+  transform: translateY(-50%);
+  margin-left: -16px;
+}
+
+.nav-link:hover {
+  color: var(--color-text);
+}
+
+.nav-link:hover::before {
+  width: 10px;
+}
+
+/* ============================================
+   Number display
+   ============================================ */
+
+.number-display {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(5rem, 10vw, 12rem);
+  font-weight: 300;
+  line-height: 0.85;
+  letter-spacing: -0.06em;
+  color: var(--color-border);
+}
+
+/* ============================================
+   Scroll Reveal
+   ============================================ */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s var(--ease-out-expo),
+              transform 0.8s var(--ease-out-expo);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.8s var(--ease-out-expo),
+              transform 0.8s var(--ease-out-expo);
+}
+
+.reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.8s var(--ease-out-expo),
+              transform 0.8s var(--ease-out-expo);
+}
+
+.reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.8s var(--ease-out-expo),
+              transform 0.8s var(--ease-out-expo);
+}
+
+.reveal-scale.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ============================================
+   Scrollbar
+   ============================================ */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-muted);
+}
+
+/* ============================================
+   Gradient Text
+   ============================================ */
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--color-accent) 0%, #FF8A65 50%, var(--color-accent) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 4s ease-in-out infinite;
+}
+
+/* ============================================
+   Noise Overlay
+   ============================================ */
+
+.noise-overlay::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.03;
+  z-index: 9998;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+
+@media (max-width: 768px) {
+  .grid-12 {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+  
+  .number-display {
+    font-size: clamp(3rem, 15vw, 5rem);
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+  .grid-12 {
+    grid-template-columns: repeat(8, 1fr);
+  }
+}
+
+/* ============================================
+   Enhanced Focus States
+   ============================================ */
+
+*:focus-visible {
+  outline: 1px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* ============================================
+   Smooth image rendering
+   ============================================ */
+
+img, svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ============================================
+   Gradient text animation
+   ============================================ */
+
+.gradient-text {
+  background: linear-gradient(
+    135deg,
+    var(--color-accent) 0%,
+    #FF8A65 25%,
+    var(--color-accent) 50%,
+    #FF8A65 75%,
+    var(--color-accent) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 6s ease-in-out infinite;
+}
+
+/* ============================================
+   Hover lift effect
+   ============================================ */
+
+.hover-lift {
+  transition: transform 0.4s var(--ease-out-expo), box-shadow 0.4s var(--ease-out-expo);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.3);
+}
+
+/* ============================================
+   Text reveal animation
+   ============================================ */
+
+@keyframes textReveal {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0% 0 0);
+  }
+}
+
+.text-reveal {
+  animation: textReveal 1s var(--ease-out-expo) both;
+}
+
+/* ============================================
+   Dot grid pattern
+   ============================================ */
+
+.dot-grid {
+  background-image: radial-gradient(circle, var(--color-border) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* ============================================
+   Accent line animation
+   ============================================ */
+
+@keyframes lineGrow {
+  from { width: 0; }
+  to { width: 60px; }
+}
+
+.line-grow {
+  animation: lineGrow 0.8s var(--ease-out-expo) both;
+}
+
+/* ============================================
+   Responsive padding adjustments
+   ============================================ */
+
+@media (max-width: 480px) {
+  :root {
+    --content-padding: 1.25rem;
+    --section-gap: clamp(4rem, 8vh, 6rem);
+  }
+
+  .font-display {
+    font-size: clamp(2.5rem, 12vw, 3.5rem);
+  }
+}
+
+@media (min-width: 1600px) {
+  :root {
+    --content-padding: 8rem;
+  }
+}
+
+/* ============================================
+   Print styles
+   ============================================ */
+
+@media print {
+  .noise-overlay::before,
+  .cursor-dot,
+  nav {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+}
